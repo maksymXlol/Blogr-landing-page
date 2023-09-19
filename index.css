@@ -19,21 +19,28 @@ h1 {
   font-family: "Ubuntu", sans-serif;
 }
 
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.conteiner {
+  max-width: 75rem;
+  margin-inline: auto;
+}
+
 header {
   position: fixed;
   left: 0;
   right: 0;
-  position: relative;
+  top: 1.5rem;
 }
 
 header .conteiner {
   display: flex;
   gap: 4rem;
-  background-color: rgb(255, 72, 0);
-}
-
-header > *:last-child {
-  margin-left: auto;
+  align-items: center;
 }
 
 .outer-list {
@@ -42,10 +49,20 @@ header > *:last-child {
   color: white;
 }
 
-span {
+ul.outer-list > li {
+  position: relative;
+}
+
+ul.outer-list span {
   display: flex;
+  padding-block: 1rem;
   align-items: center;
   gap: 0.5rem;
+}
+
+ul.outer-list span:hover {
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 ul.outer-list > li > span::after {
@@ -59,25 +76,39 @@ ul.outer-list > li > span::after {
   background-size: contain;
 }
 
-li ul {
-  display: none;
-}
-ul li:hover ul {
-  display: block;
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
   position: absolute;
   color: black;
-  margin-top: 1rem;
   padding: 1rem;
   background-color: white;
   border-radius: 5px;
+}
+
+ul li ul li:hover {
+  font-weight: 700;
+}
+
+ul li:hover ul {
+  opacity: 1;
+  visibility: visible;
 }
 
 ul li:hover span::after {
   transform: rotate(180deg);
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+  gap: 0.8rem;
+}
+
 .btn-solid {
-  border: none;
   background-color: white;
   border-radius: 1.5rem;
   padding-block: 0.6rem;
@@ -86,12 +117,27 @@ ul li:hover span::after {
   font-weight: 600;
 }
 
+.btn-solid:hover {
+  background-color: hsl(353, 100%, 62%, 0.8);
+  color: white;
+}
+
+.btn-outline:hover {
+  background-color: white;
+  color: hsl(353, 100%, 62%);
+}
+
 .btn-outline {
-  background: transparent;
   border: 1px solid white;
   border-radius: 1.5rem;
   padding-block: 0.6rem;
   padding-inline: 1.2rem;
   color: white;
   font-weight: 600;
+}
+
+.hero {
+  padding-bottom: 6rem;
+  padding-top: 12rem;
+  background: linear-gradient();
 }
