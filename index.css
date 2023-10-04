@@ -34,8 +34,9 @@ button {
 }
 
 .conteiner {
-  max-width: 75rem;
-  padding-inline: 1.5rem;
+  /* max-width: 75rem;
+  padding-inline: 1.5rem; */
+  width: min(100% - 3rem, 75rem);
   margin-inline: auto;
 }
 
@@ -50,9 +51,10 @@ header nav {
   flex-grow: 1;
 }
 
-header nav > div {
+.droplist {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 header .conteiner {
@@ -60,6 +62,7 @@ header .conteiner {
   gap: 4rem;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .burger-btn {
@@ -164,6 +167,51 @@ ul li:hover span::after {
   font-weight: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .burger-btn {
+    display: block;
+  }
+  .btn-outline {
+    padding: 1rem;
+  }
+  .btn-solid {
+    padding: 1rem;
+  }
+
+  .droplist {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    top: calc(100% + 1rem);
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.8);
+    border-radius: 0.5rem;
+  }
+
+  .droplist.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  header .btn-solid {
+    background: linear-gradient(90deg, var(--Very-light-red), var(--Light-red));
+    color: white;
+  }
+
+  .header .btn-outline {
+    color: black;
+  }
+  .outer-list {
+    color: black;
+    font-weight: 700;
+  }
+}
+
 .hero {
   padding-bottom: 6rem;
   padding-top: 12rem;
@@ -196,17 +244,8 @@ ul li:hover span::after {
   text-align: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .hero h1 {
     font-size: 2rem;
-  }
-  .burger-btn {
-    display: block;
-  }
-  .btn-outline {
-    padding: 1rem;
-  }
-  .btn-solid {
-    padding: 1rem;
   }
 }
