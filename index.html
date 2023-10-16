@@ -27,11 +27,25 @@
       <div class="conteiner">
         <a href="#"><img src="./images/logo.svg" alt="Blogr Logo" /></a>
         <nav>
-          <div class="droplist">
+          <div
+            class="droplist"
+            data-dropdown-id="nav-list"
+            data-dropdown-open="false"
+          >
             <ul class="outer-list">
               <li>
-                <span>Product</span>
-                <ul>
+                <span
+                  data-dropdown-btn
+                  data-dropdown-target="product-list-links"
+                  data-dropdown-open="false"
+                >
+                  Product
+                </span>
+                <ul
+                  class="inner-list"
+                  data-dropdown-id="product-list-links"
+                  data-dropdown-open="false"
+                >
                   <li>Overview</li>
                   <li>Pricing</li>
                   <li>Marketplace</li>
@@ -40,8 +54,18 @@
                 </ul>
               </li>
               <li>
-                <span>Company</span>
-                <ul>
+                <span
+                  data-dropdown-btn
+                  data-dropdown-target="company-list-links"
+                  data-dropdown-open="false"
+                >
+                  Company
+                </span>
+                <ul
+                  class="inner-list"
+                  data-dropdown-id="company-list-links"
+                  data-dropdown-open="false"
+                >
                   <li>About</li>
                   <li>Team</li>
                   <li>Blog</li>
@@ -49,21 +73,37 @@
                 </ul>
               </li>
               <li>
-                <span>Connect</span>
-                <ul>
+                <span
+                  data-dropdown-btn
+                  data-dropdown-target="connect-list-links"
+                  data-dropdown-open="false"
+                >
+                  Connect
+                </span>
+                <ul
+                  class="inner-list"
+                  data-dropdown-id="connect-list-links"
+                  data-dropdown-open="false"
+                >
                   <li>Contact</li>
                   <li>Newsletter</li>
                   <li>LinkedIn</li>
                 </ul>
               </li>
             </ul>
-            <div class="ml-auto flex">
+            <div class="flex details-btn">
               <button class="btn-outline">Login</button>
               <button class="btn-solid">Sign Up</button>
             </div>
           </div>
-          <button class="burger-btn ml-auto">
-            <img src="./images/icon-hamburger.svg" alt="" />
+          <button
+            class="burger-btn ml-auto"
+            data-dropdown-btn
+            data-dropdown-target="nav-list"
+            data-dropdown-open="false"
+          >
+            <img src="./images/icon-hamburger.svg" alt="" class="open-btn" />
+            <img src="./images/icon-close.svg " alt="" class="close-btn" />
           </button>
         </nav>
       </div>
