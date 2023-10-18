@@ -80,6 +80,8 @@ header .conteiner {
   display: flex;
   flex-direction: row;
   align-items: center;
+  transition: 400ms;
+  justify-content: space-between;
 }
 
 .outer-list {
@@ -126,13 +128,13 @@ ul li {
   cursor: pointer;
 }
 
-ul li ul li:hover {
+/* ul li ul li:hover {
   font-weight: 700;
 }
 
 ul li:hover span::after {
   transform: rotate(180deg);
-}
+} */
 
 @media screen and (min-width: 768.1px) {
   ul li ul {
@@ -241,6 +243,9 @@ ul li:hover span::after {
   ul.outer-list > li > span::after {
     background-image: url(./images/icon-arrow-dark.svg);
   }
+  ul.outer-list > li > span[data-dropdown-open="true"]::after {
+    rotate: 180deg;
+  }
 
   ul.outer-list span {
     justify-content: center;
@@ -262,23 +267,38 @@ ul li:hover span::after {
     flex-direction: column;
     width: 100%;
     text-align: center;
+    gap: 0px;
+    border-bottom: 1px solid var(--grey-dropdown);
+    padding-bottom: 1.5rem;
+  }
+
+  .outer-list > li {
+    padding: 0;
+    justify-content: center;
   }
   .inner-list {
     position: relative;
     background-color: var(--grey-dropdown);
     max-height: 0;
-    overflow: hidden;
     padding: 0;
+    overflow: hidden;
     color: var(--Very-dark-grayish-blue-body-copy);
+    transition: 200ms;
+  }
+
+  .inner-list li {
+    padding: 0.6rem;
   }
 
   .details-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 1rem;
   }
 
   .inner-list[data-dropdown-open="true"] {
+    padding-block: 1.5rem;
     max-height: initial;
   }
 }
@@ -319,4 +339,32 @@ ul li:hover span::after {
   .hero h1 {
     font-size: 2rem;
   }
+}
+
+.feature1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.feature1__heading1 {
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 10rem;
+}
+
+.feature1-subheading {
+  font-size: 1.5rem;
+}
+
+.feature1-p {
+  font-size: 1.1rem;
+  color: var(--Very-dark-grayish-blue-body-copy);
+}
+
+.section1-img {
+  position: absolute;
+  right: -15.9rem;
+  bottom: -40rem;
 }
