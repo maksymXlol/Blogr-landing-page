@@ -68,7 +68,14 @@ header {
   position: fixed;
   left: 0;
   right: 0;
-  top: 1.5rem;
+  top: 0;
+  padding-block: 1.5rem;
+}
+
+header.slide {
+  background-color: hsla(13, 100%, 72%, 0.76);
+  z-index: 10;
+  transition: 0.5s;
 }
 
 header nav {
@@ -491,7 +498,7 @@ ul li:hover span::after {
 .feature2 {
   text-align: center;
   position: relative;
-  padding-top: 30rem;
+  padding-top: 2rem;
   overflow-x: hidden;
 }
 
@@ -515,18 +522,28 @@ ul li:hover span::after {
 }
 
 @media screen and (min-width: 768px) {
+  .feature2 {
+    padding-top: 18rem;
+  }
   .feature2-img {
     width: 60%;
     left: 0;
     top: 50%;
     /* bottom: 0;
     margin-block: auto; */
-    transform: translate(-30%, -50%);
+    transform: translate(-30%, -35%);
     position: absolute;
     z-index: -1;
   }
+
+  .feature2-subheading {
+    margin-left: auto;
+  }
+
   .feature2-p {
     font-size: 1.2rem;
+    margin-left: auto;
+    margin-top: auto;
   }
 
   .align-left {

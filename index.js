@@ -5,6 +5,16 @@
 //   dropList.classList.toggle("visible");
 // }
 
+let header = document.querySelector(".header");
+
+window.addEventListener("scroll", (event) => {
+  if (window.scrollY >= header.clientHeight) {
+    header.classList.add("slide");
+  } else {
+    header.classList.remove("slide");
+  }
+});
+
 document.addEventListener("click", (event) => {
   let dropdownBtn = event.target.closest("[data-dropdown-btn]");
 
